@@ -14,7 +14,7 @@ RUN npm install --frozen-lockfile --production=false
 COPY . /app/
 
 # Build the app
-RUN npm build
+RUN npm run build
 
 # Install the serve package globally
 RUN npm add serve --global
