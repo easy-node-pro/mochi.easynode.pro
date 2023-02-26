@@ -8,16 +8,16 @@ WORKDIR /app
 COPY package.json yarn.lock /app/
 
 # Install dependencies
-RUN yarn install --frozen-lockfile --production=false
+RUN npm install --frozen-lockfile --production=false
 
 # Copy the rest of the app to the working directory
 COPY . /app/
 
 # Build the app
-RUN yarn build
+RUN npm build
 
 # Install the serve package globally
-RUN yarn global add serve
+RUN npm add serve --global
 
 # Set the command to start the app using serve
 CMD ["serve", "-s", "build"]
