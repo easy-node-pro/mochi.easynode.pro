@@ -4,8 +4,8 @@ FROM node:16
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy package.json and yarn.lock to the working directory
-COPY package.json package-lock.lock /app/
+# Copy package.json and package-lock.json to the working directory
+COPY package.json package-lock.json /app/
 
 # Install dependencies
 RUN npm install --frozen-lockfile --production=false
